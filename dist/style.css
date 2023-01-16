@@ -91,6 +91,18 @@ width: 100%;
     background-size: 20%;
     background-repeat: repeat-x;
 }
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.heimen {
+  user-select: none;
+  -WEBkit-user-seletct: none;
+  -moz-user-seletct: none;
+}
+
 .canvas-container canvas {
   position: absolute;
   mix-blend-mode: lighten;

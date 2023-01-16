@@ -131,7 +131,7 @@ const store = {
 		// at render time, and parsing on change.
 		config: {
 			quality: String(IS_HIGH_END_DEVICE ? QUALITY_HIGH : QUALITY_NORMAL), // will be mirrored to a global variable named `quality` in `configDidUpdate`, for perf.
-			shell: 'Random',
+			shell: '随机',
 			size: IS_DESKTOP
 				? '3' // Desktop default
 				: IS_HEADER 
@@ -306,44 +306,44 @@ const scaleFactorSelector = () => store.state.config.scaleFactor;
 // Help Content
 const helpContent = {
 	shellType: {
-		header: 'Shell Type',
-		body: 'The type of firework that will be launched. Select "Random" for a nice assortment!'
+		header: '烟花类型',
+		body: '随机烟花类型是一个很好的分类！'
 	},
 	shellSize: {
-		header: 'Shell Size',
-		body: 'The size of the fireworks. Modeled after real firework shell sizes, larger shells have bigger bursts with more stars, and sometimes more complex effects. However, larger shells also require more processing power and may cause lag.'
+		header: '烟花大小',
+		body: '烟花的大小。模仿真实的烟花尺寸，更大的烟花会有更大的爆炸效果，更多的星星和复杂的效果。但是，更大的尺寸需要更多的处理，可能导致延迟。'
 	},
 	quality: {
-		header: 'Quality',
-		body: 'Overall graphics quality. If the animation is not running smoothly, try lowering the quality. High quality greatly increases the amount of sparks rendered and may cause lag.'
+		header: '质量',
+		body: '整体图像质量。如果动画运行不流畅，试着降低质量。高质量会大大增加火花的渲染量，可能会导致延迟。'
 	},
 	skyLighting: {
-		header: 'Sky Lighting',
-		body: 'Illuminates the background as fireworks explode. If the background looks too bright on your screen, try setting it to "Dim" or "None".'
+		header: '天空照明',
+		body: '照亮背景。如果背景在你的屏幕上看起来太亮了，试着把它设置为‘暗淡’或‘无’。'
 	},
 	scaleFactor: {
-		header: 'Scale',
-		body: 'Allows scaling the size of all fireworks, essentially moving you closer or farther away. For larger shell sizes, it can be convenient to decrease the scale a bit, especially on phones or tablets.'
+		header: '规模',
+		body: '允许缩放所有烟花的大小，基本上移动你更近或更远。对于较大的外壳，缩小尺寸会很方便，尤其是在手机或平板和电脑上。'
 	},
 	autoLaunch: {
-		header: 'Auto Fire',
-		body: 'Launches sequences of fireworks automatically. Sit back and enjoy the show, or disable to have full control.'
+		header: '自动放烟花',
+		body: '自动发射烟花序列。坐下来好好享受表演吧，让它自己放烟花。'
 	},
 	finaleMode: {
-		header: 'Finale Mode',
-		body: 'Launches intense bursts of fireworks. May cause lag. Requires "Auto Fire" to be enabled.'
+		header: '终极模式',
+		body: '发射强烈的烟花。可能导致滞后。需要启用“自动开火。'
 	},
 	hideControls: {
-		header: 'Hide Controls',
-		body: 'Hides the translucent controls along the top of the screen. Useful for screenshots, or just a more seamless experience. While hidden, you can still tap the top-right corner to re-open this menu.'
+		header: '隐藏控件',
+		body: '隐藏屏幕顶部的半透明控件。有用的截图，或只是一个更无缝的体验。虽然被隐藏，但你仍然可以点击右上角重新打开这个菜单。'
 	},
 	fullscreen: {
-		header: 'Fullscreen',
-		body: 'Toggles fullscreen mode.'
+		header: '全屏显示',
+		body: '切换全屏模式'
 	},
 	longExposure: {
-		header: 'Open Shutter',
-		body: 'Experimental effect that preserves long streaks of light, similar to leaving a camera shutter open.'
+		header: '打开快门',
+		body: '保留长条纹光的实验效果，类似于打开相机快门。'
 	}
 };
 
@@ -759,7 +759,7 @@ const horsetailShell = (size=1) => {
 };
 
 function randomShellName() {
-	return Math.random() < 0.5 ? 'Crysanthemum' : shellNames[(Math.random() * (shellNames.length - 1) + 1) | 0 ];
+	return Math.random() < 0.5 ? '菊花' : shellNames[(Math.random() * (shellNames.length - 1) + 1) | 0 ];
 }
 
 function randomShell(size) {
@@ -776,9 +776,9 @@ function shellFromConfig(size) {
 // Get a random shell, not including processing intensive varients
 // Note this is only random when "Random" shell is selected in config.
 // Also, this does not create the shell, only returns the factory function.
-const fastShellBlacklist = ['Falling Leaves', 'Floral', 'Willow'];
+const fastShellBlacklist = ['落叶', '开花', '柳絮'];
 function randomFastShell() {
-	const isRandom = shellNameSelector() === 'Random';
+	const isRandom = shellNameSelector() === '随机';
 	let shellName = isRandom ? randomShellName() : shellNameSelector();
 	if (isRandom) {
 		while (fastShellBlacklist.includes(shellName)) {
@@ -790,18 +790,18 @@ function randomFastShell() {
 
 
 const shellTypes = {
-	'Random': randomShell,
-	'Crackle': crackleShell,
-	'Crossette': crossetteShell,
-	'Crysanthemum': crysanthemumShell,
-	'Falling Leaves': fallingLeavesShell,
-	'Floral': floralShell,
-	'Ghost': ghostShell,
-	'Horse Tail': horsetailShell,
-	'Palm': palmShell,
-	'Ring': ringShell,
-	'Strobe': strobeShell,
-	'Willow': willowShell
+	'随机': randomShell,
+	'爆裂': crackleShell,
+	'烈焰': crossetteShell,
+	'菊花': crysanthemumShell,
+	'落叶': fallingLeavesShell,
+	'开花': floralShell,
+	'重影': ghostShell,
+	'马尾': horsetailShell,
+	'扩散': palmShell,
+	'环状': ringShell,
+	'闪光': strobeShell,
+	'柳絮': willowShell
 };
 
 const shellNames = Object.keys(shellTypes);
@@ -826,15 +826,15 @@ function init() {
 	appNodes.shellSize.innerHTML = options;
 	
 	setOptionsForSelect(appNodes.quality, [
-		{ label: 'Low', value: QUALITY_LOW },
-		{ label: 'Normal', value: QUALITY_NORMAL },
-		{ label: 'High', value: QUALITY_HIGH }
+		{ label: '低', value: QUALITY_LOW },
+		{ label: '中', value: QUALITY_NORMAL },
+		{ label: '高', value: QUALITY_HIGH }
 	]);
 	
 	setOptionsForSelect(appNodes.skyLighting, [
-		{ label: 'None', value: SKY_LIGHT_NONE },
-		{ label: 'Dim', value: SKY_LIGHT_DIM },
-		{ label: 'Normal', value: SKY_LIGHT_NORMAL }
+		{ label: '无', value: SKY_LIGHT_NONE },
+		{ label: '暗淡', value: SKY_LIGHT_DIM },
+		{ label: '正常', value: SKY_LIGHT_NORMAL }
 	]);
 	
 	// 0.9 is mobile default
@@ -983,7 +983,7 @@ function seqPyramid() {
 	const randomSpecialShell = randomShell;
 
 	function launchShell(x, useSpecial) {
-		const isRandom = shellNameSelector() === 'Random';
+		const isRandom = shellNameSelector() === '随机';
 		let shellType = isRandom
 			? useSpecial ? randomSpecialShell : randomMainShell
 			: shellTypes[shellNameSelector()];
@@ -1027,7 +1027,7 @@ function seqSmallBarrage() {
 	
 	// (cos(x*5π+0.5π)+1)/2 is a custom wave bounded by 0 and 1 used to set varying launch heights
 	function launchShell(x, useSpecial) {
-		const isRandom = shellNameSelector() === 'Random';
+		const isRandom = shellNameSelector() === '随机';
 		let shellType = isRandom
 			? useSpecial ? randomSpecialShell : randomMainShell
 			: shellTypes[shellNameSelector()];
