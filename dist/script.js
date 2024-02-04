@@ -1246,7 +1246,7 @@ function updateGlobals(timeStep, lag) {
 	}
 	
 	// auto launch shells
-	if (store.state.config.autoLaunch) {
+	if (!store.state.config.autoLaunch) {
 		autoLaunchTime -= timeStep;
 		if (autoLaunchTime <= 0) {
 			autoLaunchTime = startSequence() * 1.25;
