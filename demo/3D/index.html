@@ -1,10 +1,10 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,user-scalable=no" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <title>我们100天啦</title>
     <style>
         * {
@@ -44,39 +44,39 @@
             transform: rotateX(-10deg);
         }
 
-            #drag-container img,
-            #drag-container video {
-                -webkit-transform-style: preserve-3d;
-                transform-style: preserve-3d;
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                line-height: 200px;
-                font-size: 50px;
-                text-align: center;
-                -webkit-box-shadow: 0 0 8px #fff;
-                box-shadow: 0 0 8px #fff;
-                -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0005);
-            }
+        #drag-container img,
+        #drag-container video {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            line-height: 200px;
+            font-size: 50px;
+            text-align: center;
+            -webkit-box-shadow: 0 0 8px #fff;
+            box-shadow: 0 0 8px #fff;
+            -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0005);
+        }
 
-                #drag-container img:hover,
-                #drag-container video:hover {
-                    -webkit-box-shadow: 0 0 15px #fffd;
-                    box-shadow: 0 0 15px #fffd;
-                    -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0007);
-                }
+        #drag-container img:hover,
+        #drag-container video:hover {
+            -webkit-box-shadow: 0 0 15px #fffd;
+            box-shadow: 0 0 15px #fffd;
+            -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0007);
+        }
 
-            #drag-container p {
-                font-family: Serif;
-                position: absolute;
-                top: 100%;
-                left: 100%;
-                -webkit-transform: translate(-50%, -50%) rotateX(90deg);
-                transform: translate(-50%, -50%) rotateX(90deg);
-                color: #fff;
-            }
+        #drag-container p {
+            font-family: Serif;
+            position: absolute;
+            top: 100%;
+            left: 100%;
+            -webkit-transform: translate(-50%, -50%) rotateX(90deg);
+            transform: translate(-50%, -50%) rotateX(90deg);
+            color: #fff;
+        }
 
         #ground {
             width: 900px;
@@ -86,7 +86,10 @@
             left: 50%;
             -webkit-transform: translate(-50%, -50%) rotateX(90deg);
             transform: translate(-50%, -50%) rotateX(90deg);
-            background: -webkit-radial-gradient( center center, farthest-side, #9993, transparent );
+            background: -webkit-radial-gradient(center center,
+                    farthest-side,
+                    #9993,
+                    transparent);
         }
 
         #music-container {
@@ -143,50 +146,56 @@
             }
         }
 
-        .video-background {  
-            position: relative;  
-            width: 35%; /* 或其他固定宽度 */  
-            height: 35%; /* 或其他固定高度，或100% */  
-            overflow: hidden;  
+        .video-background {
+            position: relative;
+            width: 35%;
+            /* 或其他固定宽度 */
+            height: 35%;
+            /* 或其他固定高度，或100% */
+            overflow: hidden;
         }
 
-        .video-background video {  
-            position: absolute;  
+        .video-background video {
+            position: absolute;
 
-            min-width: 35%;  
-            min-height: 35%;  
-            width: auto;  
-            height: auto;  
-            z-index: -100; /* 确保视频在内容之下 */  
-            background-size: cover; /* 保持视频的宽高比 */  
-            /* 隐藏控件，虽然autoplay和muted已经使它们不可见 */  
-            /* 但为了完整性，可以添加以下样式 */  
-            object-fit: cover;  
-    }
+            min-width: 35%;
+            min-height: 35%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            /* 确保视频在内容之下 */
+            background-size: cover;
+            /* 保持视频的宽高比 */
+            /* 隐藏控件，虽然autoplay和muted已经使它们不可见 */
+            /* 但为了完整性，可以添加以下样式 */
+            object-fit: cover;
+        }
 
-                
-            .container {
+        .container {
             text-align: center;
             position: absolute;
             /* margin-top: -80px;
             width: 100%; */
             top: 50%;
-            }
+        }
 
-            .toggle {
+        .toggle {
             margin: 4px;
             display: inline-block;
-            }
+        }
 
-            .toggle {
-            box-shadow: inset 0 0 35px 5px rgba(0, 0, 0, 0.25), inset 0 2px 1px 1px rgba(255, 255, 255, 0.9), inset 0 -2px 1px 0 rgba(0, 0, 0, 0.25);
+        .toggle {
+            box-shadow: inset 0 0 35px 5px rgba(0, 0, 0, 0.25),
+                inset 0 2px 1px 1px rgba(255, 255, 255, 0.9),
+                inset 0 -2px 1px 0 rgba(0, 0, 0, 0.25);
             border-radius: 8px;
             background: #ccd0d4;
             position: relative;
             height: 70px;
             width: 70px;
-            }
-            .toggle:before {
+        }
+
+        .toggle:before {
             box-shadow: 0 0 17.5px 8.75px white;
             border-radius: 118.3px;
             background: white;
@@ -199,13 +208,19 @@
             width: 50.4px;
             left: 50%;
             top: 50%;
-            }
-            .toggle .button {
+        }
+
+        .toggle .button {
             -webkit-filter: blur(1px);
             -moz-filter: blur(1px);
             filter: blur(1px);
             transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
-            box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.5), inset 0 -3px 4px -1px rgba(0, 0, 0, 0.2), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 3px 4px -1px rgba(255, 255, 255, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.8), inset 0 20px 30px 0 rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.5),
+                inset 0 -3px 4px -1px rgba(0, 0, 0, 0.2),
+                0 -10px 15px -1px rgba(255, 255, 255, 0.6),
+                inset 0 3px 4px -1px rgba(255, 255, 255, 0.2),
+                inset 0 0 5px 1px rgba(255, 255, 255, 0.8),
+                inset 0 20px 30px 0 rgba(255, 255, 255, 0.2);
             border-radius: 96.32px;
             position: absolute;
             background: #ccd0d4;
@@ -216,10 +231,12 @@
             width: 48.16px;
             left: 50%;
             top: 50%;
-            }
-            .toggle .label {
+        }
+
+        .toggle .label {
             transition: color 300ms ease-out;
-            text-shadow: 1px 1px 3px #ccd0d4, 0 0 0 rgba(0, 0, 0, 0.8), 1px 1px 4px white;
+            text-shadow: 1px 1px 3px #ccd0d4, 0 0 0 rgba(0, 0, 0, 0.8),
+                1px 1px 4px white;
             line-height: 67px;
             text-align: center;
             position: absolute;
@@ -230,8 +247,9 @@
             height: 100%;
             width: 100%;
             color: rgba(0, 0, 0, 0.4);
-            }
-            .toggle input {
+        }
+
+        .toggle input {
             opacity: 0;
             position: absolute;
             cursor: pointer;
@@ -240,45 +258,76 @@
             width: 100%;
             left: 0;
             top: 0;
-            }
-            .toggle input:active ~ .button {
-            box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6);
-            }
-            .toggle input:active ~ .label {
+        }
+
+        .toggle input:active~.button {
+            box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4),
+                inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9),
+                0 -10px 15px -1px rgba(255, 255, 255, 0.6),
+                inset 0 8px 25px 0 rgba(0, 0, 0, 0.4),
+                inset 0 0 10px 1px rgba(255, 255, 255, 0.6);
+        }
+
+        .toggle input:active~.label {
             font-size: 40px;
             color: rgba(0, 0, 0, 0.45);
-            }
-            .toggle input:checked ~ .button {
-            box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 25px -1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 20px 0 rgba(0, 0, 0, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.6);
-            }
-            .toggle input:checked ~ .label {
+        }
+
+        .toggle input:checked~.button {
+            box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4),
+                inset 0 -8px 25px -1px rgba(255, 255, 255, 0.9),
+                0 -10px 15px -1px rgba(255, 255, 255, 0.6),
+                inset 0 8px 20px 0 rgba(0, 0, 0, 0.2),
+                inset 0 0 5px 1px rgba(255, 255, 255, 0.6);
+        }
+
+        .toggle input:checked~.label {
             font-size: 40px;
             color: rgba(0, 0, 0, 0.4);
-            }
+        }
 
-            #menu {
-            position: fixed; /* 固定定位 */
-            bottom: 20px; /* 距离底部20px */
-            right: 20px; /* 距离右侧20px */
-            z-index: 1000; /* 确保按钮在其他内容之上 */
+        #menu {
+            position: fixed;
+            /* 固定定位 */
+            bottom: 20px;
+            /* 距离底部20px */
+            right: 20px;
+            /* 距离右侧20px */
+            z-index: 1000;
+            /* 确保按钮在其他内容之上 */
+        }
 
-            }
-            #decreaseBtn,#increaseBtn,#toggleFullscreenBtn{
+        #showVideo,
+        #playVideo,
+        #volumeVideo,
+        #decreaseBtn,
+        #increaseBtn,
+        #toggleFullscreenBtn {
             color: white;
             border: 0cap;
-            background-color: rgb(0, 0, 0,0);
-            font-size: 40px;
-            }
-
+            background-color: rgb(0, 0, 0, 0);
+            font-size: 30px;
+        }
     </style>
 </head>
 
 <body>
     <div id="menu">
-        <button id="decreaseBtn">
-            <span  class="fas fa-circle-up"></span>
+        <button id="showVideo">
+            <span id="VideoIcon" class="fas fa-video"></span>
         </button>
-        <button id="increaseBtn" >
+        <button id="playVideo">
+            <span id="playIcon" class="fas fa-play-circle"></span>
+            <!-- fa-circle-pause -->
+        </button>
+        <button id="volumeVideo">
+            <span id="volumeIcon" class="fas fa-volume-low"></span>
+            <!-- fa-volume-high -->
+        </button>
+        <button id="decreaseBtn">
+            <span class="fas fa-circle-up"></span>
+        </button>
+        <button id="increaseBtn">
             <span class="fas fa-circle-down"></span>
         </button>
         <button id="toggleFullscreenBtn">
@@ -298,30 +347,30 @@
             <img src="8.jpg" alt="" />
             <img src="9.jpg" alt="" />
             <!-- Example add video  -->
-            <video controls autoplay="autoplay" loop>
-                <source src="./Media/Forever and Ever and Always/Forever and Ever and Always.mp4"
-                        type="video/mp4" />
+            <video id="video-show" controls autoplay="autoplay" loop>
+                <source src="./Media/Forever and Ever and Always/Forever and Ever and Always.mp4" type="video/mp4" />
             </video>
 
             <!-- Text at center of ground -->
         </div>
-        <div id="ground" style="display: grid; place-items: center;">
-            <h2 style="color: yellow;font-size: 30px;margin-top: 20%;">WBC & ZXQ</h2>
-            <h2 style="color: aqua;font-size: 40px;">我们100天啦</h2>
-            <h2 style="color: aqua;font-size: 30px;margin-bottom: 20%;">2024-4-13 星期六</h2>
+        <div id="ground" style="display: grid; place-items: center">
+            <h2 style="color: yellow; font-size: 30px; margin-top: 20%">
+                WBC & ZXQ
+            </h2>
+            <h2 style="color: aqua; font-size: 40px">我们100天啦</h2>
+            <h2 style="color: aqua; font-size: 30px; margin-bottom: 20%">
+                2024-4-13 星期六
+            </h2>
         </div>
     </div>
 
-
     <script>
-
         // You can change global variables here:
         var radius = 240; // how big of the radius
         var autoRotate = true; // auto rotate or not
         var rotateSpeed = -60; // unit: seconds/360 degrees
         var imgWidth = 120; // width of images (unit: px)
         var imgHeight = 170; // height of images (unit: px)
-
 
         // ===================== start =======================
         setTimeout(init, 100);
@@ -344,14 +393,14 @@
         function init(delayTime) {
             for (var i = 0; i < aEle.length; i++) {
                 aEle[i].style.transform =
-                  "rotateY(" +
-                  i * (360 / aEle.length) +
-                  "deg) translateZ(" +
-                  radius +
-                  "px)";
+                    "rotateY(" +
+                    i * (360 / aEle.length) +
+                    "deg) translateZ(" +
+                    radius +
+                    "px)";
                 aEle[i].style.transition = "transform 1s";
                 aEle[i].style.transitionDelay =
-                  delayTime || (aEle.length - i) / 4 + "s";
+                    delayTime || (aEle.length - i) / 4 + "s";
             }
         }
 
@@ -369,34 +418,33 @@
         }
 
         var sX,
-          sY,
-          nX,
-          nY,
-          desX = 0,
-          desY = 0,
-          tX = 0,
-          tY = 10;
+            sY,
+            nX,
+            nY,
+            desX = 0,
+            desY = 0,
+            tX = 0,
+            tY = 10;
 
         // auto spin
         if (autoRotate) {
             var animationName = rotateSpeed > 0 ? "spin" : "spinRevert";
             ospin.style.animation = `${animationName} ${Math.abs(
-              rotateSpeed
+                rotateSpeed
             )}s infinite linear`;
-            
         }
 
         // setup events
-        document.onpointerdown = function(e) {
+        document.onpointerdown = function (e) {
             clearInterval(odrag.timer);
             e = e || window.event;
             var sX = e.clientX,
-              sY = e.clientY;
+                sY = e.clientY;
 
-            this.onpointermove = function(e) {
+            this.onpointermove = function (e) {
                 e = e || window.event;
                 var nX = e.clientX,
-                  nY = e.clientY;
+                    nY = e.clientY;
                 desX = nX - sX;
                 desY = nY - sY;
                 tX += desX * 0.1;
@@ -406,8 +454,8 @@
                 sY = nY;
             };
 
-            this.onpointerup = function(e) {
-                odrag.timer = setInterval(function() {
+            this.onpointerup = function (e) {
+                odrag.timer = setInterval(function () {
                     desX *= 0.95;
                     desY *= 0.95;
                     tX += desX * 0.1;
@@ -425,7 +473,7 @@
             return false;
         };
 
-        document.onmousewheel = function(e) {
+        document.onmousewheel = function (e) {
             e = e || window.event;
             var d = e.wheelDelta / 20 || -e.detail;
             radius += d;
@@ -433,54 +481,122 @@
         };
 
         // 为增加按钮添加点击事件监听器
-        document.getElementById('increaseBtn').addEventListener('click', function() {
-            // 模拟鼠标滚轮向上滚动（增加）
-            radius += 50; // 你可以根据需要调整这个值
-            init(1); // 调用初始化或更新函数
-        });
+        document
+            .getElementById("increaseBtn")
+            .addEventListener("click", function () {
+                // 模拟鼠标滚轮向上滚动（增加）
+                radius += 50; // 你可以根据需要调整这个值
+                init(1); // 调用初始化或更新函数
+            });
 
         // 为减少按钮添加点击事件监听器
-        document.getElementById('decreaseBtn').addEventListener('click', function() {
-            // 模拟鼠标滚轮向下滚动（减少）
-            radius -= 50; // 你可以根据需要调整这个值
-            init(1); // 调用初始化或更新函数
-        });
-
+        document
+            .getElementById("decreaseBtn")
+            .addEventListener("click", function () {
+                // 模拟鼠标滚轮向下滚动（减少）
+                radius -= 50; // 你可以根据需要调整这个值
+                init(1); // 调用初始化或更新函数
+            });
     </script>
-    <script>  
-        // JavaScript代码  
-        document.getElementById("toggleFullscreenBtn").addEventListener("click", function() {  
-          var elem = document.documentElement;  
-          var icon = document.getElementById("fullscreenIcon");  
-        
-          if (!document.fullscreenElement) {  
-            if (elem.requestFullscreen) {  
-              elem.requestFullscreen();  
-              icon.classList.remove('fa-compress', 'fa-compress-alt');  
-              icon.classList.add('fa-expand');  
-            }  
-          } else {  
-            if (document.exitFullscreen) {  
-              document.exitFullscreen();  
-              icon.classList.remove('fa-expand');  
-              icon.classList.add('fa-compress'); // 或者使用 'fa-compress-alt'  
-            }  
-          }  
-        });  
-        
-        // 监听全屏变化事件以更新图标（可选）  
-        document.addEventListener("fullscreenchange", function() {  
-          var isFullScreen = document.fullscreenElement ? false : true;  
-          var icon = document.getElementById("fullscreenIcon");  
-          if (isFullScreen) {  
-            icon.classList.remove('fa-compress', 'fa-compress-alt');  
-            icon.classList.add('fa-expand');  
-          } else {  
-            icon.classList.remove('fa-expand');  
-            icon.classList.add('fa-compress'); // 或者使用 'fa-compress-alt'  
-          }  
-        });  
-      </script>  
+    <script>
+        // JavaScript代码
+        document
+            .getElementById("toggleFullscreenBtn")
+            .addEventListener("click", function () {
+                var elem = document.documentElement;
+                var icon = document.getElementById("fullscreenIcon");
 
+                if (!document.fullscreenElement) {
+                    if (elem.requestFullscreen) {
+                        elem.requestFullscreen();
+                        icon.classList.remove("fa-compress", "fa-compress-alt");
+                        icon.classList.add("fa-expand");
+                    }
+                } else {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                        icon.classList.remove("fa-expand");
+                        icon.classList.add("fa-compress"); // 或者使用 'fa-compress-alt'
+                    }
+                }
+            });
+        // 监听全屏变化事件以更新图标（可选
+        document.addEventListener("fullscreenchange", function () {
+            var isFullScreen = document.fullscreenElement ? false : true;
+            var icon = document.getElementById("fullscreenIcon");
+            if (isFullScreen) {
+                icon.classList.remove("fa-compress", "fa-compress-alt");
+                icon.classList.add("fa-expand");
+            } else {
+                icon.classList.remove("fa-expand");
+                icon.classList.add("fa-compress"); // 或者使用 'fa-compress-alt'
+            }
+        });
+        //播放/暂停
+        document
+            .getElementById("playVideo")
+            .addEventListener("click", function () {
+                var video = document.getElementById("video-show");
+                var icon = document.getElementById("playIcon");
+                if (video.paused) {
+                    video.play();
+                    icon.classList.remove("fa-play-circle");
+                    icon.classList.add("fa-circle-pause");
+                } else {
+                    video.pause();
+                    icon.classList.remove("fa-circle-pause");
+                    icon.classList.add("fa-play-circle");
+                }
+            });
+        //静音/取消静音
+        document
+            .getElementById("volumeVideo")
+            .addEventListener("click", function () {
+                var video = document.getElementById("video-show");
+                var icon = document.getElementById("volumeIcon");
+                if (video.muted) {
+                    icon.classList.remove("fa-volume-xmark");
+                    icon.classList.add("fa-volume-low");
+                } else {
+                    icon.classList.remove("fa-volume-low");
+                    icon.classList.add("fa-volume-xmark");
+                }
+                video.muted = !video.muted;
+            });
+
+        document
+            .getElementById("showVideo")
+            .addEventListener("click", function () {
+                var video = document.getElementById("video-show");
+                // 当前不是全屏状态，进入全屏
+                if (video.requestFullscreen) {
+                    video.requestFullscreen();
+                } else if (video.mozRequestFullScreen) {
+                    /* Firefox */
+                    video.mozRequestFullScreen();
+                } else if (video.webkitRequestFullscreen) {
+                    /* Chrome, Safari & Opera */
+                    video.webkitRequestFullscreen();
+                } else if (video.msRequestFullscreen) {
+                    /* IE/Edge */
+                    video.msRequestFullscreen();
+                } else {
+                    // 当前是全屏状态，退出全屏
+                    if (!video.requestFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.mozCancelFullScreen) {
+                        /* Firefox */
+                        document.mozCancelFullScreen();
+                    } else if (document.webkitExitFullscreen) {
+                        /* Chrome, Safari and Opera */
+                        document.webkitExitFullscreen();
+                    } else if (document.msExitFullscreen) {
+                        /* IE/Edge */
+                        document.msExitFullscreen();
+                    }
+                }
+            });
+    </script>
 </body>
+
 </html>
