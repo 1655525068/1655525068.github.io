@@ -568,32 +568,14 @@
             .getElementById("showVideo")
             .addEventListener("click", function () {
                 var video = document.getElementById("video-show");
-                // 当前不是全屏状态，进入全屏
-                if (video.requestFullscreen) {
+                if (!video.requestFullscreen) {
                     video.requestFullscreen();
-                } else if (video.mozRequestFullScreen) {
-                    /* Firefox */
+                } else if (video.mozRequestFullScreen) { /* Firefox */
                     video.mozRequestFullScreen();
-                } else if (video.webkitRequestFullscreen) {
-                    /* Chrome, Safari & Opera */
+                } else if (video.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
                     video.webkitRequestFullscreen();
-                } else if (video.msRequestFullscreen) {
-                    /* IE/Edge */
+                } else if (video.msRequestFullscreen) { /* IE/Edge */
                     video.msRequestFullscreen();
-                } else {
-                    // 当前是全屏状态，退出全屏
-                    if (!video.requestFullscreen) {
-                        document.exitFullscreen();
-                    } else if (document.mozCancelFullScreen) {
-                        /* Firefox */
-                        document.mozCancelFullScreen();
-                    } else if (document.webkitExitFullscreen) {
-                        /* Chrome, Safari and Opera */
-                        document.webkitExitFullscreen();
-                    } else if (document.msExitFullscreen) {
-                        /* IE/Edge */
-                        document.msExitFullscreen();
-                    }
                 }
             });
     </script>
